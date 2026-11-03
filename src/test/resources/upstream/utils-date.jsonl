@@ -1,0 +1,5 @@
+{"op":"DATEVALUE","args":["1/1/1900"],"assert":"equal","expected":{"date":"1900-01-01T00:00:00.000Z"}}
+{"op":"DATE","args":[1900,1,1],"serial":true,"assert":"equal","expected":1}
+{"op":"DATEVALUE","args":["1/1/1900"],"serial":true,"assert":"equal","expected":1}
+{"op":"utils.date.dateToSerial","args":[{"date":-2208988800000}],"assert":"equal","expected":1}
+{"op":"utils.date.serialToDate","args":[1],"assert":"equal","expected":{"date":"1900-01-01T00:00:00.000Z"}}

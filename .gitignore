@@ -2,12 +2,12 @@
 .DS_Store
 .idea
 .vscode
+*.iml
+.classpath
+.project
+.settings
 
-coverage
-lib
-mochawesome-report
-node_modules
-types
+target
 
 IMPLEMENTATION_STATS.yml
 

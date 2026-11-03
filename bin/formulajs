@@ -1,0 +1,3 @@
+#!/bin/sh
+# The formulajs command: the library behind a JSON-lines front end (build it first: mvn -q -DskipTests package).
+exec java -jar "$(dirname "$(readlink -f "$0")")/../target/formulajs.jar" "$@"

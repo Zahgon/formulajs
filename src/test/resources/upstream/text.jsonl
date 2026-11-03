@@ -1,0 +1,264 @@
+{"op":"CHAR","args":[65],"assert":"equal","expected":"A"}
+{"op":"CHAR","args":[255],"assert":"equal","expected":"ÿ"}
+{"op":"CHAR","args":[1000],"assert":"equal","expected":"Ϩ"}
+{"op":"CHAR","args":[{"undefined":true}],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"CHAR","args":[{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"CHAR","args":["invalid"],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"CLEAN","args":[{"undefined":true}],"assert":"equal","expected":""}
+{"op":"CLEAN","args":[{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"CLEAN","args":["Monthly Report"],"assert":"equal","expected":"Monthly Report"}
+{"op":"CODE","args":[],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"CODE","args":[{"undefined":true}],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"CODE","args":[{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"CODE","args":["A"],"assert":"equal","expected":65}
+{"op":"CODE","args":["Ϩ"],"assert":"equal","expected":1000}
+{"op":"CONCAT","args":["a",{"undefined":true},"b"],"assert":"equal","expected":"ab"}
+{"op":"CONCAT","args":["a",{"error":"#N/A"},"b"],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"CONCAT","args":["hello"," ","world"],"assert":"equal","expected":"hello world"}
+{"op":"CONCAT","args":[["hello"," my ","world"]],"assert":"equal","expected":"hello my world"}
+{"op":"CONCAT","args":[1,"one"],"assert":"equal","expected":"1one"}
+{"op":"CONCAT","args":[true,"yes"],"assert":"equal","expected":"TRUEyes"}
+{"op":"CONCAT","args":[false,"no"],"assert":"equal","expected":"FALSEno"}
+{"op":"CONCAT","args":["a",{"undefined":true},"b"],"assert":"equal","expected":"ab"}
+{"op":"CONCAT","args":["a",{"error":"#N/A"},"b"],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"CONCAT","args":["hello"," ","world"],"assert":"equal","expected":"hello world"}
+{"op":"CONCAT","args":[["hello"," my ","world"]],"assert":"equal","expected":"hello my world"}
+{"op":"CONCAT","args":[1,"one"],"assert":"equal","expected":"1one"}
+{"op":"CONCAT","args":[true,"yes"],"assert":"equal","expected":"TRUEyes"}
+{"op":"CONCAT","args":[false,"no"],"assert":"equal","expected":"FALSEno"}
+{"op":"DOLLAR","args":[1234.567],"assert":"equal","expected":"$1,234.57"}
+{"op":"DOLLAR","args":[1234.567,-2],"assert":"equal","expected":"$1,200"}
+{"op":"DOLLAR","args":[-1234.567,-2],"assert":"equal","expected":"$(1,200)"}
+{"op":"DOLLAR","args":[-0.123,4],"assert":"equal","expected":"$(0.1230)"}
+{"op":"DOLLAR","args":[-99.888],"assert":"equal","expected":"$(99.89)"}
+{"op":"DOLLAR","args":["invalid"],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"DOLLAR","args":[255],"assert":"equal","expected":"$255.00"}
+{"op":"DOLLAR","args":[367.456,2],"assert":"equal","expected":"$367.46"}
+{"op":"EXACT","args":[{"undefined":true},{"undefined":true}],"assert":"equal","expected":true}
+{"op":"EXACT","args":[{"undefined":true},null],"assert":"equal","expected":true}
+{"op":"EXACT","args":[{"undefined":true},""],"assert":"equal","expected":true}
+{"op":"EXACT","args":[{"error":"#N/A"},{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"EXACT","args":["yes","yes"],"assert":"equal","expected":true}
+{"op":"EXACT","args":["yes","no"],"assert":"equal","expected":false}
+{"op":"EXACT","args":["yes","yes","yes"],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"EXACT","args":[],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"EXACT","args":["true",true],"assert":"equal","expected":true}
+{"op":"EXACT","args":["12",12],"assert":"equal","expected":true}
+{"op":"EXACT","args":["Word","0"],"assert":"equal","expected":false}
+{"op":"FIND","args":[{"undefined":true},{"undefined":true}],"assert":"equal","expected":1}
+{"op":"FIND","args":["M","Miriam McGovern"],"assert":"equal","expected":1}
+{"op":"FIND","args":["m","Miriam McGovern"],"assert":"equal","expected":6}
+{"op":"FIND","args":["M","Miriam McGovern",3],"assert":"equal","expected":8}
+{"op":"FIND","args":["M",{"undefined":true}],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"FIND","args":["M"],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"FIND","args":[],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"FIND","args":[true,"12true"],"assert":"equal","expected":3}
+{"op":"FIND","args":[12,"312"],"assert":"equal","expected":2}
+{"op":"FIND","args":[12,312],"assert":"equal","expected":2}
+{"op":"FIXED","args":[1234.567,1],"assert":"equal","expected":"1,234.6"}
+{"op":"FIXED","args":[1234.567,-1],"assert":"equal","expected":"1,230"}
+{"op":"FIXED","args":[-1234.567,-1,true],"assert":"equal","expected":"-1230"}
+{"op":"FIXED","args":[44.332],"assert":"equal","expected":"44.33"}
+{"op":"FIXED","args":["invalid"],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"FIXED","args":[1234567.89,3],"assert":"equal","expected":"1,234,567.890"}
+{"op":"FIXED","args":[123456.789,{"undefined":true},true],"assert":"equal","expected":"123456.79"}
+{"op":"FIXED","args":[12345.6789,-2],"assert":"equal","expected":"12,300"}
+{"op":"FIXED","args":[12134567.89,-3,1],"assert":"equal","expected":"12135000"}
+{"op":"FIXED","args":[12345.789,0.75],"assert":"equal","expected":"12,346"}
+{"op":"FIXED","args":[12345.789,1.6],"assert":"equal","expected":"12,345.8"}
+{"op":"FIXED","args":[1234.56789,5],"assert":"equal","expected":"1,234.56789"}
+{"op":"FIXED","args":[1234.567899,5],"assert":"equal","expected":"1,234.56790"}
+{"op":"FIXED","args":[1234.5,5],"assert":"equal","expected":"1,234.50000"}
+{"op":"FIXED","args":[123456.9,4],"assert":"equal","expected":"123,456.9000"}
+{"op":"LEFT","args":[{"error":"#N/A"},2],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"LEFT","args":["text",{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"LEFT","args":[{"undefined":true},{"undefined":true}],"assert":"equal","expected":""}
+{"op":"LEFT","args":[{"undefined":true},3],"assert":"equal","expected":""}
+{"op":"LEFT","args":["Sale Price",4],"assert":"equal","expected":"Sale"}
+{"op":"LEFT","args":["Sweeden"],"assert":"equal","expected":"S"}
+{"op":"LEFT","args":[42],"assert":"equal","expected":"4"}
+{"op":"LEFT","args":[true],"assert":"equal","expected":"t"}
+{"op":"LEN","args":[{"undefined":true}],"assert":"equal","expected":0}
+{"op":"LEN","args":[{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"LEN","args":[true],"assert":"equal","expected":4}
+{"op":"LEN","args":["four"],"assert":"equal","expected":4}
+{"op":"LEN","args":[[1,2,3,4,5]],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"LEN","args":[],"assert":"equal","expected":{"error":"#ERROR!"}}
+{"op":"LEN","args":[null],"assert":"equal","expected":0}
+{"op":"LEN","args":[[]],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"LEN","args":[123],"assert":"equal","expected":3}
+{"op":"LOWER","args":[{"undefined":true}],"assert":"equal","expected":""}
+{"op":"LOWER","args":[{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"LOWER","args":["abcd"],"assert":"equal","expected":"abcd"}
+{"op":"LOWER","args":["ABcd"],"assert":"equal","expected":"abcd"}
+{"op":"LOWER","args":["ABCD"],"assert":"equal","expected":"abcd"}
+{"op":"LOWER","args":[""],"assert":"equal","expected":""}
+{"op":"LOWER","args":[true],"assert":"equal","expected":"true"}
+{"op":"LOWER","args":[1],"assert":"equal","expected":"1"}
+{"op":"LOWER","args":[],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"MID","args":["Fluid Flow",1,5],"assert":"equal","expected":"Fluid"}
+{"op":"MID","args":["Fluid Flow",7,20],"assert":"equal","expected":"Flow"}
+{"op":"MID","args":["Fluid Flow",20,5],"assert":"equal","expected":""}
+{"op":"MID","args":["Programming language and core technology of the Web",12,10],"assert":"equal","expected":" language "}
+{"op":"MID","args":["Programming language and core technology of the Web",31,21],"assert":"equal","expected":"technology of the Web"}
+{"op":"MID","args":["Programming language and core technology of the Web",12,100],"assert":"equal","expected":" language and core technology of the Web"}
+{"op":"MID","args":["Programming language and core technology of the Web",31,25],"assert":"equal","expected":"technology of the Web"}
+{"op":"MID","args":["Programming language and core technology of the Web",52,1],"assert":"equal","expected":""}
+{"op":"MID","args":[{"undefined":true},20,3],"assert":"equal","expected":""}
+{"op":"MID","args":[null,52,8],"assert":"equal","expected":""}
+{"op":"MID","args":[-162,1,3],"assert":"equal","expected":"-16"}
+{"op":"MID","args":[162.178925,3,6],"assert":"equal","expected":"2.1789"}
+{"op":"MID","args":[true,3,2],"assert":"equal","expected":"ue"}
+{"op":"MID","args":[false,2,6],"assert":"equal","expected":"alse"}
+{"op":"MID","args":["",-3,3],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"MID","args":["",3,-3],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"MID","args":["",-3,-3],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"NUMBERVALUE","args":["2.500,27",",","."],"assert":"equal","expected":2500.27}
+{"op":"NUMBERVALUE","args":["250",",","."],"assert":"equal","expected":250}
+{"op":"NUMBERVALUE","args":["",",","."],"assert":"equal","expected":0}
+{"op":"NUMBERVALUE","args":[null,",","."],"assert":"equal","expected":0}
+{"op":"NUMBERVALUE","args":[{"undefined":true},",","."],"assert":"equal","expected":0}
+{"op":"NUMBERVALUE","args":[3],"assert":"equal","expected":3}
+{"op":"NUMBERVALUE","args":[true],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"PROPER","args":[{"undefined":true}],"assert":"equal","expected":""}
+{"op":"PROPER","args":[null],"assert":"equal","expected":""}
+{"op":"PROPER","args":[{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"PROPER","args":["a title case"],"assert":"equal","expected":"A Title Case"}
+{"op":"PROPER","args":[true],"assert":"equal","expected":"True"}
+{"op":"PROPER","args":[false],"assert":"equal","expected":"False"}
+{"op":"PROPER","args":[90],"assert":"equal","expected":"90"}
+{"op":"PROPER","args":[{"number":"NaN"}],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"PROPER","args":[],"assert":"equal","expected":""}
+{"op":"REPLACE","args":["abcdefghijk",6,5,"*"],"assert":"equal","expected":"abcde*k"}
+{"op":"REPLACE","args":["2009",3,2,"10"],"assert":"equal","expected":"2010"}
+{"op":"REPLACE","args":["123456",1,3,"@"],"assert":"equal","expected":"@456"}
+{"op":"REPLACE","args":[],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"REPT","args":[{"undefined":true},{"undefined":true}],"assert":"equal","expected":""}
+{"op":"REPT","args":["text",{"undefined":true}],"assert":"equal","expected":""}
+{"op":"REPT","args":[{"undefined":true},3],"assert":"equal","expected":""}
+{"op":"REPT","args":[{"error":"#N/A"},3],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"REPT","args":["multiple ",3],"assert":"equal","expected":"multiple multiple multiple "}
+{"op":"REPT","args":["m"],"assert":"equal","expected":""}
+{"op":"REPT","args":[],"assert":"equal","expected":""}
+{"op":"REPT","args":[true,2],"assert":"equal","expected":"truetrue"}
+{"op":"REPT","args":[12,2],"assert":"equal","expected":"1212"}
+{"op":"RIGHT","args":[{"error":"#N/A"},2],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"RIGHT","args":["text",{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"RIGHT","args":[{"undefined":true},{"undefined":true}],"assert":"equal","expected":""}
+{"op":"RIGHT","args":[{"undefined":true},3],"assert":"equal","expected":""}
+{"op":"RIGHT","args":["Sale Price",5],"assert":"equal","expected":"Price"}
+{"op":"RIGHT","args":["Stock Number"],"assert":"equal","expected":"r"}
+{"op":"RIGHT","args":["something","invalid"],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"RIGHT","args":[],"assert":"equal","expected":""}
+{"op":"RIGHT","args":[42],"assert":"equal","expected":"2"}
+{"op":"RIGHT","args":[true],"assert":"equal","expected":"e"}
+{"op":"SEARCH","args":["e","Statements",6],"assert":"equal","expected":7}
+{"op":"SEARCH","args":["margin","Profit Margin"],"assert":"equal","expected":8}
+{"op":"SEARCH","args":[true,"bool"],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"SEARCH","args":["foo","bar"],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"SEARCH","args":["ba","bar"],"assert":"equal","expected":1}
+{"op":"SUBSTITUTE","args":["Jim Alateras","Jim","James"],"assert":"equal","expected":"James Alateras"}
+{"op":"SUBSTITUTE","args":["Jim Alateras","im","ames"],"assert":"equal","expected":"James Alateras"}
+{"op":"SUBSTITUTE","args":["Jim Alateras","","ames"],"assert":"equal","expected":"Jim Alateras"}
+{"op":"SUBSTITUTE","args":["Jim Alateras",{"undefined":true},"ames"],"assert":"equal","expected":"Jim Alateras"}
+{"op":"SUBSTITUTE","args":["Jim, Alateras, Sr.",",",""],"assert":"equal","expected":"Jim Alateras Sr."}
+{"op":"SUBSTITUTE","args":["","im","ames"],"assert":"equal","expected":""}
+{"op":"SUBSTITUTE","args":[{"undefined":true},"im","ames"],"assert":"notexist"}
+{"op":"SUBSTITUTE","args":["J. Alateras",".","ames"],"assert":"equal","expected":"James Alateras"}
+{"op":"SUBSTITUTE","args":["Jim Alateras"],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"SUBSTITUTE","args":[],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"SUBSTITUTE","args":["a-a-a",":","",1],"assert":"equal","expected":"a-a-a"}
+{"op":"SUBSTITUTE","args":["a-a-a","-",":","2"],"assert":"equal","expected":"a-a:a"}
+{"op":"SUBSTITUTE","args":["a-a-a","-",":","2.5"],"assert":"equal","expected":"a-a:a"}
+{"op":"SUBSTITUTE","args":["a-a-a","-",":","3"],"assert":"equal","expected":"a-a-a"}
+{"op":"SUBSTITUTE","args":["a-a-a","-",":",2],"assert":"equal","expected":"a-a:a"}
+{"op":"SUBSTITUTE","args":["a-a-a","-",":",2.5],"assert":"equal","expected":"a-a:a"}
+{"op":"SUBSTITUTE","args":["a-a-a","-",":",3],"assert":"equal","expected":"a-a-a"}
+{"op":"SUBSTITUTE","args":["a-a-a","-",":",""],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"SUBSTITUTE","args":["a-a-a","-",":","x"],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"SUBSTITUTE","args":["a-a-a","-",":","-1"],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"SUBSTITUTE","args":["a-a-a","-",":","-0.5"],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"SUBSTITUTE","args":["a-a-a","-",":",-1],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"SUBSTITUTE","args":["a-a-a","-",":",0],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"SUBSTITUTE","args":["a-a-a","-",":",0.5],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"T","args":[{"undefined":true}],"assert":"equal","expected":""}
+{"op":"T","args":[{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"T","args":["Rainfall"],"assert":"equal","expected":"Rainfall"}
+{"op":"T","args":[19],"assert":"equal","expected":""}
+{"op":"T","args":[true],"assert":"equal","expected":""}
+{"op":"TEXT","args":[1234.59,"###0.0"],"assert":"equal","expected":"1234.6"}
+{"op":"TEXT","args":[1234.59,"0"],"assert":"equal","expected":"1235"}
+{"op":"TEXT","args":[1234.52,"###0.0"],"assert":"equal","expected":"1234.5"}
+{"op":"TEXT","args":[1234.56,"###0.00"],"assert":"equal","expected":"1234.56"}
+{"op":"TEXT","args":[1234,"###0.0000"],"assert":"equal","expected":"1234.0000"}
+{"op":"TEXT","args":[123456.9,"#,##0.0000"],"assert":"equal","expected":"123,456.9000"}
+{"op":"TEXT","args":[],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"TEXT","args":[1234567.89,"$#,##0.00"],"assert":"equal","expected":"$1,234,567.89"}
+{"op":"TEXT","args":[1234.59,"$#,##0.00"],"assert":"equal","expected":"$1,234.59"}
+{"op":"TEXT","args":[-1234567.89,"$#,##0.00"],"assert":"equal","expected":"-$1,234,567.89"}
+{"op":"TEXT","args":[-1234.59,"$#,##0.00"],"assert":"equal","expected":"-$1,234.59"}
+{"op":"TEXT","args":[0,"$#,##0.00"],"assert":"equal","expected":"$0.00"}
+{"op":"TEXT","args":[0.89,"0.00%"],"assert":"equal","expected":"89.00%"}
+{"op":"TEXT","args":[0.1234,"0.00%"],"assert":"equal","expected":"12.34%"}
+{"op":"TEXT","args":[1,"0.00%"],"assert":"equal","expected":"100.00%"}
+{"op":"TEXT","args":[{"error":"#VALUE!"},"0.00%"],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"TEXT","args":[0.89,{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"TEXT","args":[{"error":"#VALUE!"},{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"TEXT","args":[123,{"undefined":true}],"assert":"equal","expected":""}
+{"op":"TEXT","args":[123,null],"assert":"equal","expected":""}
+{"op":"TEXT","args":[123,111],"assert":"equal","expected":"111"}
+{"op":"TEXT","args":[123,true],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"TEXT","args":[{"date":1681214400000},"DD MMMM, YYYY"],"assert":"equal","expected":"2023-04-11"}
+{"op":"TEXTJOIN","args":[" ",true,"The","","sun","will","come","up","tomorrow."],"assert":"equal","expected":"The sun will come up tomorrow."}
+{"op":"TEXTJOIN","args":[" ","TRUE","The","","sun","will","come","up","tomorrow."],"assert":"equal","expected":"The sun will come up tomorrow."}
+{"op":"TEXTJOIN","args":[" ",false,"The","","sun","will","come","up","tomorrow."],"assert":"equal","expected":"The  sun will come up tomorrow."}
+{"op":"TEXTJOIN","args":[" ","FALSE","The","","sun","will","come","up","tomorrow."],"assert":"equal","expected":"The  sun will come up tomorrow."}
+{"op":"TEXTJOIN","args":[["_",">"],true,"The","sun","will","come","up","tomorrow."],"assert":"equal","expected":"The_sun>will_come>up_tomorrow."}
+{"op":"TEXTJOIN","args":[" ",true,["The","sun","will"],"come",["up","tomorrow."]],"assert":"equal","expected":"The sun will come up tomorrow."}
+{"op":"TEXTJOIN","args":[true,true,["The","sun","will"],"come",["up","tomorrow."]],"assert":"equal","expected":"Thetruesuntruewilltruecometrueuptruetomorrow."}
+{"op":"TEXTJOIN","args":[{"undefined":true},{"undefined":true},"The","sun","will","come","up","tomorrow."],"assert":"equal","expected":"Thesunwillcomeuptomorrow."}
+{"op":"TEXTJOIN","args":[" ",true],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"TRIM","args":[{"undefined":true}],"assert":"equal","expected":""}
+{"op":"TRIM","args":[{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"TRIM","args":[" more  spaces "],"assert":"equal","expected":"more spaces"}
+{"op":"TRIM","args":[true],"assert":"equal","expected":"true"}
+{"op":"TRIM","args":[10],"assert":"equal","expected":"10"}
+{"op":"TRIM","args":["  spaces,      tabs, and\n      new lines"],"assert":"equal","expected":"spaces, tabs, and new lines"}
+{"op":"TRIM","args":["  spaces,\t\t\ttabs, and\nnew lines"],"assert":"equal","expected":"spaces, tabs, and new lines"}
+{"op":"CHAR","args":[{"undefined":true}],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"CHAR","args":[{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"CHAR","args":[65],"assert":"equal","expected":"A"}
+{"op":"CHAR","args":[255],"assert":"equal","expected":"ÿ"}
+{"op":"CHAR","args":[1000],"assert":"equal","expected":"Ϩ"}
+{"op":"CODE","args":[{"undefined":true}],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"CODE","args":[{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"CODE","args":["A"],"assert":"equal","expected":65}
+{"op":"CODE","args":["Ϩ"],"assert":"equal","expected":1000}
+{"op":"UPPER","args":[{"undefined":true}],"assert":"equal","expected":""}
+{"op":"UPPER","args":[{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"UPPER","args":["to upper case please"],"assert":"equal","expected":"TO UPPER CASE PLEASE"}
+{"op":"UPPER","args":[true],"assert":"equal","expected":"TRUE"}
+{"op":"UPPER","args":[1],"assert":"equal","expected":"1"}
+{"op":"VALUE","args":[{"error":"#N/A"}],"assert":"equal","expected":{"error":"#N/A"}}
+{"op":"VALUE","args":[3],"assert":"equal","expected":3}
+{"op":"VALUE","args":[""],"assert":"equal","expected":0}
+{"op":"VALUE","args":[],"assert":"equal","expected":0}
+{"op":"VALUE","args":[null],"assert":"equal","expected":0}
+{"op":"VALUE","args":[true],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"VALUE","args":["SOMETEXT"],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"VALUE","args":["2+2"],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"VALUE","args":["3%22"],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"VALUE","args":["3D22"],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"VALUE","args":["SOMETEXT 42"],"assert":"equal","expected":{"error":"#VALUE!"}}
+{"op":"VALUE","args":["10E3"],"assert":"equal","expected":10000}
+{"op":"VALUE","args":["%12"],"assert":"equal","expected":0.12}
+{"op":"VALUE","args":["12%"],"assert":"equal","expected":0.12}
+{"op":"VALUE","args":[12],"assert":"equal","expected":12}
+{"op":"VALUE","args":["123.45"],"assert":"equal","expected":123.45}
+{"op":"VALUE","args":["10,000"],"assert":"equal","expected":10000}
+{"op":"VALUE","args":["1,210,000"],"assert":"equal","expected":1210000}
+{"op":"VALUE","args":["11 000"],"assert":"equal","expected":11000}
+{"op":"VALUE","args":["-3.14"],"assert":"equal","expected":-3.14}
+{"op":"VALUE","args":["$1000"],"assert":"equal","expected":1000}
+{"op":"VALUE","args":["$11,000"],"assert":"equal","expected":11000}
+{"op":"VALUE","args":["EUR1000"],"assert":"equal","expected":1000}
